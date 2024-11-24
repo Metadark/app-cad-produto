@@ -1,0 +1,31 @@
+{
+  "name": "furniture-store-app",
+  "main": "app/app.ts",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "@nativescript/core": "~8.8.0",
+    "@nativescript/camera": "^5.0.15",
+    "@nativescript/barcodescanner": "^5.0.0",
+    "@nativescript/google-signin": "^2.0.2",
+    "@nativescript/local-notifications": "^6.1.1",
+    "@nativescript/background-http": "^5.0.2",
+    "@nativescript/sqlite": "^3.0.1",
+    "date-fns": "^2.30.0",
+    "rxjs": "^7.8.1"
+  },
+  "devDependencies": {
+    "@nativescript/android": "8.8.0",
+    "@nativescript/ios": "8.8.0",
+    "@nativescript/preview-cli": "1.0.13",
+    "@nativescript/stackblitz": "0.0.8",
+    "@nativescript/tailwind": "^2.1.0",
+    "@nativescript/types-minimal": "~8.8.0",
+    "@nativescript/webpack": "~5.0.0",
+    "tailwindcss": "~3.4.0",
+    "typescript": "~5.4.0"
+  },
+  "scripts": {
+    "preview": "setup-nativescript-stackblitz && ns preview"
+  }
+}

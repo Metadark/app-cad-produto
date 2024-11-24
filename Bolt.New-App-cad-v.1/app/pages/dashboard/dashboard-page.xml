@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
+  <ActionBar title="Dashboard" class="bg-blue-600 text-white">
+    <ActionItem tap="{{ onLogout }}" ios.position="right" android.position="actionBar">
+      <Label text="Logout" class="text-white" />
+    </ActionItem>
+  </ActionBar>
+
+  <GridLayout rows="*" columns="*">
+    <ScrollView>
+      <GridLayout rows="auto, auto" columns="*, *" class="p-4 gap-4">
+        <!-- Quick Actions -->
+        <StackLayout row="0" col="0" class="bg-white p-4 rounded-lg shadow">
+          <Label text="Products" class="text-lg font-bold mb-2" />
+          <Label text="{{ productCount }}" class="text-3xl text-blue-600" />
+        </StackLayout>
+
+        <StackLayout row="0" col="1" class="bg-white p-4 rounded-lg shadow">
+          <Label text="Low Stock" class="text-lg font-bold mb-2" />
+          <Label text="{{ lowStockCount }}" class="text-3xl text-red-600" />
+        </StackLayout>
+
+        <!-- Menu Items -->
+        <WrapLayout row="1" colSpan="2" class="mt-4">
+          <StackLayout tap="{{ onNavigateToProducts }}" class="w-1/2 p-2">
+            <Label text="Products" class="text-center p-4 bg-blue-100 rounded-lg" />
+          </StackLayout>
+          
+          <StackLayout tap="{{ onNavigateToCustomers }}" class="w-1/2 p-2">
+            <Label text="Customers" class="text-center p-4 bg-green-100 rounded-lg" />
+          </StackLayout>
+          
+          <StackLayout tap="{{ onNavigateToAppointments }}" class="w-1/2 p-2">
+            <Label text="Appointments" class="text-center p-4 bg-purple-100 rounded-lg" />
+          </StackLayout>
+          
+          <StackLayout tap="{{ onNavigateToWorkOrders }}" class="w-1/2 p-2">
+            <Label text="Work Orders" class="text-center p-4 bg-yellow-100 rounded-lg" />
+          </StackLayout>
+        </WrapLayout>
+      </GridLayout>
+    </ScrollView>
+  </GridLayout>
+</Page>

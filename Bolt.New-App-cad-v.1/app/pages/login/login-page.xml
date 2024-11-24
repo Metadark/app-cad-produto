@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo" class="bg-gray-100">
+  <ActionBar title="Login" class="bg-blue-600 text-white" />
+  
+  <StackLayout class="p-4 space-y-4">
+    <Image src="~/assets/logo.png" class="h-32 w-32 mx-auto" />
+    
+    <TextField hint="Email" text="{{ email }}" keyboardType="email" 
+      class="p-4 bg-white rounded-lg border border-gray-300" />
+      
+    <TextField hint="Password" text="{{ password }}" secure="true"
+      class="p-4 bg-white rounded-lg border border-gray-300" />
+      
+    <Button text="Login" tap="{{ onLogin }}" 
+      class="bg-blue-600 text-white p-4 rounded-lg" />
+      
+    <Label text="Forgot Password?" tap="{{ onForgotPassword }}"
+      class="text-blue-600 text-center" />
+  </StackLayout>
+</Page>

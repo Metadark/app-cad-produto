@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
+  <ActionBar title="{{ isNew ? 'New Product' : 'Edit Product' }}">
+    <ActionItem tap="{{ onSave }}" ios.position="right" android.position="actionBar">
+      <Label text="Save" class="text-white" />
+    </ActionItem>
+  </ActionBar>
+
+  <ScrollView>
+    <StackLayout class="p-4 space-y-4">
+      <TextField hint="Product Name" text="{{ product.name }}" 
+        class="input" />
+      <TextView hint="Description" text="{{ product.description }}" 
+        class="input" height="100" />
+      <TextField hint="Price" text="{{ product.price }}" 
+        keyboardType="number" class="input" />
+      <TextField hint="Quantity" text="{{ product.quantity }}" 
+        keyboardType="number" class="input" />
+      <TextField hint="Low Stock Threshold" text="{{ product.low_stock_threshold }}" 
+        keyboardType="number" class="input" />
+      <GridLayout columns="*, auto" class="input">
+        <TextField col="0" hint="Barcode" text="{{ product.barcode }}" 
+          editable="false" />
+        <Button col="1" text="Scan" tap="{{ onScanBarcode }}" 
+          class="bg-blue-600 text-white" />
+      </GridLayout>
+      <TextField hint="Location" text="{{ product.location }}" 
+        class="input" />
+    </StackLayout>
+  </ScrollView>
+</Page>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
+  <ActionBar title="{{ isNew ? 'New Customer' : 'Edit Customer' }}">
+    <ActionItem tap="{{ onSave }}" ios.position="right" android.position="actionBar">
+      <Label text="Save" class="text-white" />
+    </ActionItem>
+    <ActionItem tap="{{ onDelete }}" ios.position="right" android.position="actionBar"
+      visibility="{{ isNew ? 'collapsed' : 'visible' }}">
+      <Label text="Delete" class="text-white" />
+    </ActionItem>
+  </ActionBar>
+
+  <ScrollView>
+    <StackLayout class="p-4 space-y-4">
+      <TextField hint="Customer Name" text="{{ customer.name }}" 
+        class="input" />
+      <TextField hint="Email" text="{{ customer.email }}" 
+        keyboardType="email" class="input" />
+      <TextField hint="Phone" text="{{ customer.phone }}" 
+        keyboardType="phone" class="input" />
+      <TextView hint="Address" text="{{ customer.address }}" 
+        class="input" height="80" />
+      <TextView hint="Notes" text="{{ customer.notes }}" 
+        class="input" height="100" />
+
+      <!-- Customer History Section -->
+      <StackLayout visibility="{{ isNew ? 'collapsed' : 'visible' }}" class="mt-4">
+        <Label text="Customer History" class="text-lg font-bold mb-2" />
+        <GridLayout rows="auto, auto" columns="*, *" class="gap-2">
+          <Button row="0" col="0" text="View Orders" tap="{{ onViewOrders }}"
+            class="bg-blue-600 text-white" />
+          <Button row="0" col="1" text="View Appointments" tap="{{ onViewAppointments }}"
+            class="bg-purple-600 text-white" />
+        </GridLayout>
+      </StackLayout>
+    </StackLayout>
+  </ScrollView>
+</Page>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
+  <ActionBar title="Products">
+    <ActionItem tap="{{ onAddProduct }}" ios.position="right" android.position="actionBar">
+      <Label text="+" class="text-2xl font-bold text-white" />
+    </ActionItem>
+  </ActionBar>
+
+  <GridLayout rows="auto, *" class="p-4">
+    <!-- Search and Filter Bar -->
+    <GridLayout row="0" columns="*, auto, auto" class="mb-4">
+      <SearchBar col="0" hint="Search products..." text="{{ searchText }}" 
+        submit="{{ onSearch }}" clear="{{ onClearSearch }}" />
+      <Button col="1" text="Filter" tap="{{ onShowFilters }}" 
+        class="ml-2 bg-blue-600 text-white" />
+      <Button col="2" text="Scan" tap="{{ onScanBarcode }}" 
+        class="ml-2 bg-green-600 text-white" />
+    </GridLayout>
+
+    <!-- Products List -->
+    <ListView row="1" items="{{ products }}" itemTap="{{ onProductTap }}" class="list-group">
+      <ListView.itemTemplate>
+        <GridLayout columns="*, auto" class="p-4 border-b border-gray-200">
+          <StackLayout col="0">
+            <Label text="{{ name }}" class="text-lg font-semibold" />
+            <Label text="{{ 'Quantity: ' + quantity }}" class="text-gray-600" />
+            <Label text="{{ '$' + price }}" class="text-blue-600" />
+          </StackLayout>
+          <Label col="1" text="{{ quantity <= low_stock_threshold ? '⚠️' : '' }}" 
+            class="text-xl" />
+        </GridLayout>
+      </ListView.itemTemplate>
+    </ListView>
+  </GridLayout>
+</Page>

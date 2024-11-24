@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.input {
+  @apply p-4 bg-white rounded-lg border border-gray-300;
+}
+
+.list-group {
+  @apply bg-white rounded-lg shadow;
+}
